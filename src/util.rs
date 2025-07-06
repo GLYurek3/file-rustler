@@ -1,4 +1,4 @@
-use crate::config;
+use crate::config::Config;
 use clap::Command;
 use serde::Deserialize;
 use std::collections::HashMap;
@@ -45,12 +45,5 @@ pub fn build_command(cmd: Command) -> Command {
 }
 
 pub fn write_default_config() {
-    let default_config = r#"
-# Name / Explanation of rule
-#--------------------------------------------------------
-rule: "Lorem Ipsum"
-locations: 
-      - ~/Downloads
-
-"#;
+    let default_config = r#""#;
 }
