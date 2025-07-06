@@ -1,0 +1,12 @@
+rules:
+  - name: test
+    enabled: true
+    targets: "test"
+    locations: 
+      - ~/Downloads
+    subfolders: true
+    filter_mode: "all"
+    filters:
+      - extension: ".pdf"
+    actions:
+      - trash
