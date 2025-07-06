@@ -1,10 +1,10 @@
 mod config;
 mod util;
-
 use clap::{Arg, Command, Subcommand, ValueEnum};
+use config::Config;
 use serde;
 use serde_yml;
-use util::{Config, build_command, get_config_path};
+use util::{build_command, get_config_path};
 
 use crate::util::{read_config, write_default_config};
 fn main() -> Result<(), Box<dyn std::error::Error>> {
