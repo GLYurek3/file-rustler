@@ -1,3 +1,4 @@
+use crate::config;
 use clap::Command;
 use serde::Deserialize;
 use std::collections::HashMap;
@@ -6,28 +7,6 @@ use std::error::Error;
 use std::fs;
 use std::io::{self, Read};
 use std::path::{Path, PathBuf};
-#[derive(Deserialize, Debug)]
-pub struct NameFilter {
-    begins_with: String,
-    contains: Vec<String>,
-    ends_with: String,
-}
-
-#[derive(Deserialize, Debug)]
-pub struct Filter {
-    name: NameFilter,
-}
-
-#[derive(Deserialize, Debug)]
-pub struct Rule {
-    name: String,
-    locations: Vec<String>,
-    filters: Vec<Filter>,
-}
-#[derive(Deserialize, Debug)]
-pub struct Config {
-    rules: Vec<Rule>,
-}
 
 pub fn read_config_file(path: &str) -> Result<String, Box<dyn Error>> {
     let path = shellexpand::tilde(path).to_string();

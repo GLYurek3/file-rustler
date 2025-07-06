@@ -1,4 +1,6 @@
+mod config;
 mod util;
+
 use clap::{Arg, Command, Subcommand, ValueEnum};
 use serde;
 use serde_yml;
